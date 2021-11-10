@@ -17,24 +17,22 @@ public class CalculatorMain {
     }
     static double divide(int first, int second)
     {
-       if(checkIfNotZero(first,second)) {
-          return  (double)first/second;
-       }
+        double temp = 0;
+        try
+        {
+            temp = (double)first/second;
+        }
+        catch (ArithmeticException e)
+        {
+                System.out.println(e);
+        }
         return 0;
     }
     static int multiply(int first, int second)
     {
         return first*second;
     }
-    static boolean checkIfNotZero(int first, int second)
-    {
 
-        if(first != 0 && second !=0)
-        {
-            return true;
-        }
-        return false;
-    }
     static void calculator()
     {
         Scanner sc = new Scanner(System.in);
